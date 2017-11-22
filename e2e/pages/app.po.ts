@@ -1,6 +1,7 @@
 import { browser } from 'protractor';
+import {SignInComponent} from "../components/signin.co";
 
-export class Page {
+export class DefaultPage {
 
   navigateTo(destination) {
     return browser.get(destination);
@@ -9,5 +10,8 @@ export class Page {
   getTitle() {
     return browser.getTitle();
   }
-  
+
+  getSignInComponent() {
+    return new SignInComponent();
+  }
 }

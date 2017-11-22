@@ -1,10 +1,10 @@
-import { Page } from './app.po';
+import { DefaultPage } from './pages/app.po';
 
 describe('App', function() {
-  let page: Page;
+  let page: DefaultPage;
 
-  beforeEach(() => {
-    page = new Page();
+  beforeAll(() => {
+    page = new DefaultPage();
   });
 
   describe('default screen', () => {
@@ -16,6 +16,12 @@ describe('App', function() {
       page.getTitle().then(title => {
         expect(title).toEqual('Explore Philippines');
       });
+    });
+
+    it('should show a sign in screen on initial load', () => {
+      page.getSignInComponent().getRootElement().isPresent().then(boolean => {
+        expect(boolean).toBe(true);
+      })
     });
   })
 });
