@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { ListPage } from "../list/list";
+import { MenuController, NavController } from 'ionic-angular';
+import { MasterListPage } from "../master-list/master-list";
 
 @Component({
   selector: 'page-sign-in',
@@ -12,16 +12,25 @@ export class SignInPage {
   // private password: string;
   // private error: string;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(private navCtrl: NavController, private menu: MenuController) {}
 
+  //TODO call a fake login service to save username
   login(): void {
-    this.navCtrl.push(ListPage);
+    this.navCtrl.setRoot(MasterListPage);
   }
 
   ionViewDidLoad(): void {
     setTimeout(() => {
       this.email.setFocus();
     }, 500);
+  }
+
+  ionViewDidEnter() {
+    this.menu.swipeEnable(false);
+  }
+
+  ionViewDidLeave() {
+    this.menu.swipeEnable(true);
   }
 
 }

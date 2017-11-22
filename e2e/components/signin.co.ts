@@ -1,4 +1,4 @@
-import {by, element, ElementFinder} from "protractor";
+import { by, element, ElementFinder } from "protractor";
 
 export class SignInComponent {
   appRoot = 'page-sign-in';
@@ -8,8 +8,21 @@ export class SignInComponent {
     return this.rootElement;
   }
 
-  clickLogin() {
+  enterUsername(username: string): void {
+    let loginField = element(by.id('loginField'));
+    loginField.click();
+    loginField.element(by.css('input')).sendKeys(username);
+  }
+
+  enterPassword(password: string): void {
+    let passwordField = element(by.id('passwordField'));
+    passwordField.click();
+    passwordField.element(by.css('input')).sendKeys(password);  }
+
+  clickSignIn(): void {
     element(by.className('submit-btn')).click();
   }
+
+
 
 }

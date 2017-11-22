@@ -1,5 +1,7 @@
 import { browser } from 'protractor';
-import {SignInComponent} from "../components/signin.co";
+
+import { SignInComponent } from "../components/signin.co";
+import { MenuComponent } from "../components/menu.co";
 
 export class DefaultPage {
 
@@ -14,4 +16,9 @@ export class DefaultPage {
   getSignInComponent() {
     return new SignInComponent();
   }
+
+  getMenuComponent() {
+    return new MenuComponent();
+  }
+
 }

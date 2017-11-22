@@ -1,11 +1,11 @@
 import { async, TestBed } from '@angular/core/testing';
 import { IonicModule, Platform } from 'ionic-angular';
-import {SplashScreenMock, StatusBarMock} from "ionic-mocks";
+import { SplashScreenMock, StatusBarMock } from "ionic-mocks";
 
 import { MyApp } from './app.component';
 import { PlatformMock } from '../../test-config/mocks-ionic';
 import { StatusBar } from "@ionic-native/status-bar";
-import {SplashScreen} from "@ionic-native/splash-screen";
+import { SplashScreen } from "@ionic-native/splash-screen";
 
 describe('MyApp Component', () => {
   let fixture;
@@ -33,9 +33,4 @@ describe('MyApp Component', () => {
   it('should be created', () => {
     expect(component instanceof MyApp).toBe(true);
   });
-
-  it('should have two pages', () => {
-    expect(component.pages.length).toBe(2);
-  });
-
 });
