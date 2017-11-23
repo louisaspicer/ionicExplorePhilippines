@@ -4,25 +4,29 @@ export class SignInComponent {
   appRoot = 'page-sign-in';
   rootElement: ElementFinder = element(by.css(this.appRoot));
 
-  getRootElement() {
+  getRootElement(): ElementFinder {
     return this.rootElement;
   }
 
-  enterUsername(username: string): void {
+  navigateToMasterList(): void {
+    this.enterUsername('username');
+    this.enterPassword('password');
+    this.clickSignIn();
+  }
+
+  private enterUsername(username: string): void {
     let loginField = element(by.id('loginField'));
     loginField.click();
     loginField.element(by.css('input')).sendKeys(username);
   }
 
-  enterPassword(password: string): void {
+  private enterPassword(password: string): void {
     let passwordField = element(by.id('passwordField'));
     passwordField.click();
     passwordField.element(by.css('input')).sendKeys(password);  }
 
-  clickSignIn(): void {
+  private clickSignIn(): void {
     element(by.className('submit-btn')).click();
   }
-
-
 
 }

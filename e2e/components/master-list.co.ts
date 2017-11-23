@@ -4,8 +4,9 @@ export class MasterListComponent {
   appRoot = 'page-master-list';
   rootElement: ElementFinder = element(by.css(this.appRoot));
 
-  getRootElement() {
+  getRootElement(): ElementFinder {
     return this.rootElement;
   }
 
+  // getAllDestinationCards() {}
 }

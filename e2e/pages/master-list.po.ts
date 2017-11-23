@@ -5,4 +5,5 @@ export class MasterListPage {
   getMasterListComponent() {
     return new MasterListComponent();
   }
+
 }

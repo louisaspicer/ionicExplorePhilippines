@@ -1,8 +1,8 @@
-import { by, element } from "protractor";
+import { by, element, ElementFinder } from "protractor";
 
 export class MenuComponent {
 
-  getMenuButton() {
+  getMenuButton(): ElementFinder {
     return element(by.className('menuToggle'));
   }
 

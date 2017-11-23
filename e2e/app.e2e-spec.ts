@@ -38,9 +38,7 @@ describe('App', function() {
 
     describe('upon sign in', () => {
       beforeEach(() => {
-        page.getSignInComponent().enterUsername("louisa");
-        page.getSignInComponent().enterPassword("password");
-        page.getSignInComponent().clickSignIn();
+        page.getSignInComponent().navigateToMasterList();
       });
 
       it('should load the Master List page on sign in click', () => {
@@ -58,4 +56,5 @@ describe('App', function() {
       });
     });
   });
+
 });

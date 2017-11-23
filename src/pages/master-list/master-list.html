@@ -9,3 +9,21 @@
   </ion-navbar>
 </ion-header>
 
+<ion-content class="cards-bg">
+
+  <ion-card *ngFor="let card of pointOfInterestCards">
+
+    <img class="photo" src={{card.photo}}/>
+
+    <ion-card-content>
+      <ion-card-title>
+        {{card.title}}
+      </ion-card-title>
+      <p>
+        {{card.shortDescription}}
+      </p>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

@@ -25,4 +25,6 @@ export class MenuComponent {
   openPage(page): void {
     this.nav.setRoot(page.component);
   }
+ // <!--TODO: make the menu push the page to the side instead of cover-->
+//<!--TODO: change 'signin' in menu list to 'Sign Out'
 }
