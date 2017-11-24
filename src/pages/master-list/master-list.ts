@@ -18,7 +18,6 @@ export class MasterListPage {
   ) {}
 
   ionViewDidLoad() {
-    this.cityInfoService.load();
     this.pointOfInterestCards = this.cityInfoService.pointOfInterestCards;
   }
 

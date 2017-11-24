@@ -16,7 +16,7 @@ export class CityInfoServiceProvider {
   constructor(public http: Http) {}
 
   load(): void {
-    if (this.pointOfInterestCards.length != 0) {
+    if (this.pointOfInterestCards.length !== 0) {
       return;
     }
 

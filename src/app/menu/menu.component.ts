@@ -17,14 +17,19 @@ export class MenuComponent {
 
   constructor() {
     this.pages = [
-      { title: 'SignIn', component: SignInPage },
-      { title: 'MasterList', component: MasterListPage }
+      { title: 'All Destinations', component: MasterListPage },
+      { title: 'Favourites', component: null },
+      { title: 'Directions', component: null },
+      { title: 'Sign Out', component: SignInPage },
     ];
   }
 
   openPage(page): void {
+    if (page.component === null) {
+      return;
+    }
+
     this.nav.setRoot(page.component);
   }
  // <!--TODO: make the menu push the page to the side instead of cover-->
-//<!--TODO: change 'signin' in menu list to 'Sign Out'
 }
