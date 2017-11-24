@@ -16,6 +16,10 @@ export class CityInfoServiceProvider {
   constructor(public http: Http) {}
 
   load(): void {
+    if (this.pointOfInterestCards.length != 0) {
+      return;
+    }
+
     this.http
       .get(this.pointsOfInterestApiUrl)
       .map(res => res.json())

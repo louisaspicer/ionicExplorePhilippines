@@ -15,8 +15,8 @@ export class SignInPage {
 
   constructor(
     private navCtrl: NavController,
-    private menu: MenuController,
-    private cityInfoService: CityInfoServiceProvider) {}
+    private menu: MenuController
+  ) {}
 
   //TODO call a fake login service to save username
   login(): void {
