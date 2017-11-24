@@ -9,9 +9,6 @@ import {CityInfoServiceProvider} from "../../providers/city-info-service/city-in
 })
 export class SignInPage {
   @ViewChild('email') email: any;
-  // private username: string;
-  // private password: string;
-  // private error: string;
 
   constructor(
     private navCtrl: NavController,
