@@ -1,17 +1,21 @@
 import { Component } from '@angular/core';
-import { ViewController } from 'ionic-angular';
+import {NavController, ViewController} from 'ionic-angular';
 import { CityInfoServiceProvider } from "../../providers/city-info-service/city-info-service";
 import { PointOfInterestCard } from "../../models/point-of-interest-card";
+import {DetailPage} from "../detail/detail";
 
 @Component({
   selector: 'page-master-list',
   templateUrl: 'master-list.html'
 })
 export class MasterListPage {
-  pages: Array<{title: string, component: any}>;
   pointOfInterestCards: PointOfInterestCard[];
 
-  constructor(private view: ViewController, public cityInfoService: CityInfoServiceProvider) {}
+  constructor(
+    public view: ViewController,
+    public navController: NavController,
+    public cityInfoService: CityInfoServiceProvider
+  ) {}
 
   ionViewDidLoad() {
     this.cityInfoService.load();
@@ -20,6 +24,10 @@ export class MasterListPage {
 
   ionViewWillEnter() {
     this.view.showBackButton(false);
+  }
+
+  openPage(pointOfInterest: PointOfInterestCard) {
+    this.navController.push(DetailPage, pointOfInterest)
   }
 
 }

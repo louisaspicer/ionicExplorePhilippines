@@ -11,7 +11,7 @@
 
 <ion-content class="cards-bg">
 
-  <ion-card *ngFor="let card of pointOfInterestCards">
+  <ion-card *ngFor="let card of pointOfInterestCards" (click)="openPage(card)">
 
     <img class="photo" src={{card.photo}}/>
 
