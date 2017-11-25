@@ -29,8 +29,12 @@ How to Install:
 
 How to run the tests:
 -----
-For end-to-end tests, run `ionic serve` first, then `npm run e2e`
-For unit and integration tests, run `npm run test`
+* For end-to-end tests, run `ionic serve` first, then `npm run e2e`
+* For unit and integration tests, run `npm run test`
+
+Jasmine, Karma and Protractor for unit and e2e testing.
+
+Testing was setup by following: https://leifwells.github.io/2017/08/27/testing-in-ionic-configure-existing-projects-for-testing/ to set up testing foundation
 
 Screenshots:
 -----
