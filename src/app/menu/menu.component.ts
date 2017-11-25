@@ -31,5 +31,4 @@ export class MenuComponent {
 
     this.nav.setRoot(page.component);
   }
- // <!--TODO: make the menu push the page to the side instead of cover-->
 }

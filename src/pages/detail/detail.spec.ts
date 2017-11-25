@@ -47,7 +47,7 @@ describe('Page: Detail', () => {
     let photoElement = fixture.debugElement.query(By.css('img'));
     let titleElement = fixture.debugElement.query(By.css('ion-title')).nativeElement;
 
-    expect(titleElement.textContent).toContain(pointOfInterestCard.title);
+    expect(titleElement.textContent).toContain('Destination');
     expect(cardElement.textContent).toContain(pointOfInterestCard.longDescription);
     expect(photoElement.properties.src).toContain(pointOfInterestCard.photo);
   });

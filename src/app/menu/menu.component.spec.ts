@@ -21,8 +21,8 @@ describe('Menu Component', () => {
     component = fixture.componentInstance;
   });
 
-  it('should have two pages', () => {
-    expect(component.pages.length).toBe(2);
+  it('should have four pages', () => {
+    expect(component.pages.length).toBe(4);
   });
 
 });
