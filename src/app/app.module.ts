@@ -1,9 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { HttpModule } from "@angular/http";
+import { BaseRequestOptions, HttpModule } from "@angular/http";
+import { MockBackend } from "@angular/http/testing";
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+
 
 import { MyApp } from './app.component';
 import { SignInPage } from '../pages/sign-in/sign-in';
@@ -12,6 +15,8 @@ import { DetailPage } from "../pages/detail/detail";
 import { RegisterPage } from "../pages/register/register";
 import { MenuComponent } from "./menu/menu.component";
 import { CityInfoServiceProvider } from '../providers/city-info-service/city-info-service';
+import { fakeBackendProvider } from "../helpers/fake-backend";
+import { UserService } from "../providers/user-service/user-service";
 
 @NgModule({
   declarations: [
@@ -40,7 +45,11 @@ import { CityInfoServiceProvider } from '../providers/city-info-service/city-inf
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    CityInfoServiceProvider
+    CityInfoServiceProvider,
+    UserService,
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions
   ]
 })
 export class AppModule {}
