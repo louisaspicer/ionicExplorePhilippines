@@ -12,34 +12,50 @@ export class RegisterComponent {
     return this.rootElement;
   }
 
-  clickRegisterButton() {
+  clickRegisterButton(): promise.Promise<void> {
     let submitButton = element(by.className('register-user-button'));
     browser.wait(this.ec.visibilityOf(submitButton), 5000);
-    submitButton.click();
+    return submitButton.click();
   }
 
   enterUsername(username: string): void {
-    let loginField = element(by.id('userNameField'));
-    loginField.click();
-    loginField.element(by.css('input')).sendKeys(username);
+    let usernameField = element(by.id('userNameField'));
+    let input = usernameField.element(by.css('input'));
+
+    usernameField.click();
+    input.clear().then(() => {
+      input.sendKeys(username);
+    });
   }
 
   enterFirstName(firstName: string): void {
-    let loginField = element(by.id('firstNameField'));
-    loginField.click();
-    loginField.element(by.css('input')).sendKeys(firstName);
+    let firstNameField = element(by.id('firstNameField'));
+    let input = firstNameField.element(by.css('input'));
+
+    firstNameField.click();
+    input.clear().then(() => {
+      input.sendKeys(firstName);
+    });
   }
 
   enterLastName(lastName: string): void {
-    let loginField = element(by.id('lastNameField'));
-    loginField.click();
-    loginField.element(by.css('input')).sendKeys(lastName);
+    let lastNameField = element(by.id('lastNameField'));
+    let input = lastNameField.element(by.css('input'));
+
+    lastNameField.click();
+    input.clear().then(() => {
+      input.sendKeys(lastName);
+    });
   }
 
   enterPassword(password: string): promise.Promise<void> {
-    let passwordField = element(by.id('password2Field'));
+    let passwordField = element(by.id('passwordInputField'));
     passwordField.click();
     return passwordField.element(by.css('input')).sendKeys(password);
+  }
+
+  getErrorMessage(): promise.Promise<string> {
+    return element(by.className('error-message')).getText();
   }
 
 }

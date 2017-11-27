@@ -17,7 +17,6 @@ export class SignInPage {
     private cityInfoService: CityInfoServiceProvider
   ) {}
 
-  //TODO call a fake login service to save username
   login(): void {
     this.navController.setRoot(MasterListPage);
     this.cityInfoService.load();
