@@ -7,7 +7,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
-
 import { MyApp } from './app.component';
 import { SignInPage } from '../pages/sign-in/sign-in';
 import { MasterListPage } from "../pages/master-list/master-list";
@@ -17,6 +16,7 @@ import { MenuComponent } from "./menu/menu.component";
 import { CityInfoServiceProvider } from '../providers/city-info-service/city-info-service';
 import { fakeBackendProvider } from "../helpers/fake-backend";
 import { UserService } from "../providers/user-service/user-service";
+import { AuthenticationService } from "../providers/authentication-service/authentication-service";
 
 @NgModule({
   declarations: [
@@ -46,6 +46,7 @@ import { UserService } from "../providers/user-service/user-service";
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     CityInfoServiceProvider,
+    AuthenticationService,
     UserService,
     fakeBackendProvider,
     MockBackend,
