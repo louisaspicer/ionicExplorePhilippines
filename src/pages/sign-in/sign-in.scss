@@ -39,12 +39,21 @@ page-sign-in {
       width: 150px;
       align-items: center;
       text-align: center;
+
+      &:hover {
+        background: #88C0C6;
+        border-radius: 30px !important;
+        border: 1px solid #ffffff;
+      }
     }
 
-    .submit-btn:hover {
-      background: #88C0C6;
-      border-radius: 30px !important;
-      border: 1px solid #ffffff;
+    .register-btn {
+      color: #000000;
+      font-size: 12px;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

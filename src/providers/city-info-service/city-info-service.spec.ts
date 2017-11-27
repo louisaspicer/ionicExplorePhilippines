@@ -2,7 +2,6 @@ import { TestBed, inject, async } from '@angular/core/testing';
 import { Http, HttpModule, BaseRequestOptions, Response, ResponseOptions } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
 import {CityInfoServiceProvider} from "./city-info-service";
-import {PointOfInterestCard} from "../../models/point-of-interest-card";
 
 describe('Provider: City Info', () => {
   let service: CityInfoServiceProvider;
@@ -73,6 +72,5 @@ describe('Provider: City Info', () => {
     service.load();
     expect(service.pointOfInterestCards.length).toBe(1);
   });
-
 
 });

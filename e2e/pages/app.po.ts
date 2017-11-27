@@ -2,6 +2,7 @@ import { browser } from 'protractor';
 
 import { SignInComponent } from "../components/signin.co";
 import { MenuComponent } from "../components/menu.co";
+import { RegisterComponent } from "../components/register.co";
 
 export class DefaultPage {
 
@@ -19,6 +20,10 @@ export class DefaultPage {
 
   getMenuComponent() {
     return new MenuComponent();
+  }
+
+  getRegisterComponent() {
+    return new RegisterComponent();
   }
 
 }

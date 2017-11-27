@@ -1,6 +1,7 @@
 import { DefaultPage } from './pages/app.po';
 import { MasterListPage } from "./pages/master-list.po";
 import { browser } from "protractor";
+import { RegisterPage } from "./pages/register.po";
 
 describe('App', function() {
   let page: DefaultPage;
@@ -9,12 +10,10 @@ describe('App', function() {
   beforeAll(() => {
     page = new DefaultPage();
     masterListPage = new MasterListPage();
+    page.navigateTo('/');
   });
 
   describe('default screen', () => {
-    beforeEach(() => {
-      page.navigateTo('/');
-    });
 
     it('should have a title saying Explore Philippines', () => {
       page.getTitle().then(title => {
@@ -31,9 +30,28 @@ describe('App', function() {
     it('should not show menu icon on sign in page', () => {
       page.getMenuComponent().getMenuButton().isPresent()
         .then(isMenuButtonFound => {
-          browser.sleep(5000);
+          browser.sleep(2000);
           expect(isMenuButtonFound).toBe(false);
         });
+    });
+
+    describe('register', () => {
+
+      it('should have a register button', () => {
+        page.getRegisterComponent().getRegisterButton().isPresent()
+          .then(isRegisterButtonFound => {
+            expect(isRegisterButtonFound).toBe(true);
+          });
+      });
+
+      it('should navigate to register page when register button is clicked', () => {
+        page.getRegisterComponent().getRegisterButton().click();
+
+        page.getRegisterComponent().getRootElement().isPresent()
+          .then(isOnRegisterPage => {
+            expect(isOnRegisterPage).toBe(true);
+          });
+      });
     });
 
     describe('upon sign in', () => {

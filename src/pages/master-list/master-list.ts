@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {NavController, ViewController} from 'ionic-angular';
+import { MenuController, NavController, ViewController } from 'ionic-angular';
 import { CityInfoServiceProvider } from "../../providers/city-info-service/city-info-service";
 import { PointOfInterestCard } from "../../models/point-of-interest-card";
-import {DetailPage} from "../detail/detail";
+import { DetailPage } from "../detail/detail";
 
 @Component({
   selector: 'page-master-list',
@@ -14,7 +14,8 @@ export class MasterListPage {
   constructor(
     public view: ViewController,
     public navController: NavController,
-    public cityInfoService: CityInfoServiceProvider
+    public cityInfoService: CityInfoServiceProvider,
+    private menu: MenuController
   ) {}
 
   ionViewDidLoad() {
@@ -23,6 +24,7 @@ export class MasterListPage {
 
   ionViewWillEnter() {
     this.view.showBackButton(false);
+    this.menu.swipeEnable(true);
   }
 
   openPage(pointOfInterest: PointOfInterestCard) {

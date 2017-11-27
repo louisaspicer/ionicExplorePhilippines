@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { MenuController, NavController } from 'ionic-angular';
 import { MasterListPage } from "../master-list/master-list";
-import {CityInfoServiceProvider} from "../../providers/city-info-service/city-info-service";
+import { CityInfoServiceProvider } from "../../providers/city-info-service/city-info-service";
+import { RegisterPage } from "../register/register";
 
 @Component({
   selector: 'page-sign-in',
@@ -11,15 +12,19 @@ export class SignInPage {
   @ViewChild('email') email: any;
 
   constructor(
-    private navCtrl: NavController,
+    private navController: NavController,
     private menu: MenuController,
     private cityInfoService: CityInfoServiceProvider
-) {}
+  ) {}
 
   //TODO call a fake login service to save username
   login(): void {
-    this.navCtrl.setRoot(MasterListPage);
+    this.navController.setRoot(MasterListPage);
     this.cityInfoService.load();
+  }
+
+  createNewAccount(): void {
+    this.navController.push(RegisterPage);
   }
 
   ionViewDidLoad(): void {
@@ -28,12 +33,8 @@ export class SignInPage {
     }, 500);
   }
 
-  ionViewDidEnter() {
+  ionViewDidEnter(): void {
     this.menu.swipeEnable(false);
-  }
-
-  ionViewDidLeave() {
-    this.menu.swipeEnable(true);
   }
 
 }

@@ -9,6 +9,7 @@ import { MyApp } from './app.component';
 import { SignInPage } from '../pages/sign-in/sign-in';
 import { MasterListPage } from "../pages/master-list/master-list";
 import { DetailPage } from "../pages/detail/detail";
+import { RegisterPage } from "../pages/register/register";
 import { MenuComponent } from "./menu/menu.component";
 import { CityInfoServiceProvider } from '../providers/city-info-service/city-info-service';
 
@@ -18,6 +19,7 @@ import { CityInfoServiceProvider } from '../providers/city-info-service/city-inf
     SignInPage,
     MasterListPage,
     DetailPage,
+    RegisterPage,
     MenuComponent
   ],
   imports: [
@@ -31,6 +33,7 @@ import { CityInfoServiceProvider } from '../providers/city-info-service/city-inf
     SignInPage,
     MasterListPage,
     DetailPage,
+    RegisterPage,
     MenuComponent
   ],
   providers: [
