@@ -1,0 +1,45 @@
+page-register {
+
+  .register-content {
+    background: #e5e5e5;
+
+    .register-box {
+      padding: 20px 20px 0 20px;
+      margin-top: 30px;
+    }
+
+    ion-row {
+      align-items: center;
+      text-align: center;
+    }
+
+    ion-item {
+      border-radius: 30px !important;
+      padding-left: 30px !important;
+      margin-bottom: 10px;
+      border: 1px solid #ffffff;
+      border-bottom: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .item-inner {
+      border-bottom-color: #ffffff !important;
+      box-shadow: none !important;
+    }
+
+    .submit-btn {
+      background: #44C3AA;
+      border-radius: 30px !important;
+      border: 1px solid #ffffff;
+      width: 150px;
+      align-items: center;
+      text-align: center;
+
+      &:hover {
+        background: #88C0C6;
+        border-radius: 30px !important;
+        border: 1px solid #ffffff;
+      }
+    }
+  }
+}

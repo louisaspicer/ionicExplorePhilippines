@@ -1,19 +1,23 @@
 import { DefaultPage } from './pages/app.po';
 import { MasterListPage } from "./pages/master-list.po";
 import { browser } from "protractor";
-import { RegisterPage } from "./pages/register.po";
+import { RegisterComponent } from "./components/register.co";
 
 describe('App', function() {
   let page: DefaultPage;
   let masterListPage: MasterListPage;
+  let registerPage: RegisterComponent;
 
   beforeAll(() => {
     page = new DefaultPage();
     masterListPage = new MasterListPage();
-    page.navigateTo('/');
+    registerPage = new RegisterComponent();
   });
 
   describe('default screen', () => {
+    beforeEach(() => {
+      page.navigateTo('/');
+    });
 
     it('should have a title saying Explore Philippines', () => {
       page.getTitle().then(title => {
@@ -38,17 +42,19 @@ describe('App', function() {
     describe('register', () => {
 
       it('should have a register button', () => {
-        page.getRegisterComponent().getRegisterButton().isPresent()
+        page.getRegisterButton().isPresent()
           .then(isRegisterButtonFound => {
             expect(isRegisterButtonFound).toBe(true);
           });
       });
 
       it('should navigate to register page when register button is clicked', () => {
-        page.getRegisterComponent().getRegisterButton().click();
+        page.getRegisterButton().click();
 
-        page.getRegisterComponent().getRootElement().isPresent()
+        registerPage.getRootElement().isPresent()
           .then(isOnRegisterPage => {
+            browser.sleep(2000);
+
             expect(isOnRegisterPage).toBe(true);
           });
       });

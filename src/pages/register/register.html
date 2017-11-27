@@ -1,0 +1,41 @@
+<ion-content class="register-content" padding>
+
+  <div class="register-box">
+    <form #registerForm="ngForm" autocomplete="off">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            <ion-item>
+              <ion-input placeholder="First Name" name="firstName" id="firstNameField" type="text"
+                         required [(ngModel)]="registerUser.firstName" #firstName></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input placeholder="Last Name" name="lastName" id="lastNameField" type="text"
+                         required [(ngModel)]="registerUser.lastName" #lastName></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input placeholder="Email" name="username" id="userNameField" type="text"
+                         required [(ngModel)]="registerUser.username" #email></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input placeholder="Password" name="password" id="password2Field" type="password"
+                         required [(ngModel)]="registerUser.password" #password></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+          <button ion-button class="register-user-button" (click)="register()" [disabled]="!registerForm.form.valid">Register</button>
+        </ion-col>
+      </ion-row>
+    </form>
+
+  </div>
+
+</ion-content>

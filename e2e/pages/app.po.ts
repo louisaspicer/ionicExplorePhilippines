@@ -1,8 +1,7 @@
-import { browser } from 'protractor';
+import { browser, by, element, ElementFinder } from 'protractor';
 
 import { SignInComponent } from "../components/signin.co";
 import { MenuComponent } from "../components/menu.co";
-import { RegisterComponent } from "../components/register.co";
 
 export class DefaultPage {
 
@@ -22,8 +21,7 @@ export class DefaultPage {
     return new MenuComponent();
   }
 
-  getRegisterComponent() {
-    return new RegisterComponent();
+  getRegisterButton(): ElementFinder {
+    return element(by.className('register-btn'));
   }
-
 }
