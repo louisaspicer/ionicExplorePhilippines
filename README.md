@@ -18,6 +18,8 @@ Struggles / Improvements to be Made:
 * Use an API with more points of interest information, such as https://developer.here.com
 * Add a dummy API for end to end testing (haven't been able to test full e2e functionality due to this)
 * Broken destinations list unit test due to click event not triggering
+* Look into unsubscribing from Observables when leaving components
+* Add alerts service for unsuccessful login attempt and successful registration
 
 How to Install:
 -----
@@ -29,12 +31,17 @@ How to Install:
 
 How to run the tests:
 -----
-* For end-to-end tests, run `ionic serve` first, then `npm run e2e`
-* For unit and integration tests, run `npm run test`
+* For end-to-end tests, run `ionic serve` first, then `npm run e2e` (Jasmine and Protractor)
+* For unit and integration tests, run `npm run test` (Jasmine and Karma)
 
-Jasmine, Karma and Protractor for unit and e2e testing.
 
-Testing was setup by following: https://leifwells.github.io/2017/08/27/testing-in-ionic-configure-existing-projects-for-testing/ to set up testing foundation
+Notes
+-----
+
+Testing was setup by following: https://leifwells.github.io/2017/08/27/testing-in-ionic-configure-existing-projects-for-testing/ to set up testing foundation.     
+
+Fake backend for the user service was set up by following part of an Angular tutorial that can be found here: http://jasonwatmore.com/post/2016/09/29/angular-2-user-registration-and-login-example-tutorial#authentication-service-ts
+
 
 Screenshots:
 -----
