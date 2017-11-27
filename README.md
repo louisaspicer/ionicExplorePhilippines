@@ -46,5 +46,6 @@ Fake backend for the user service was set up by following part of an Angular tut
 Screenshots:
 -----
 ![alt text](./src/assets/imgs/sign-in-page.png)
+![alt text](./src/assets/imgs/register-page.png)
 ![alt text](./src/assets/imgs/destinations-list.png)
 ![alt text](./src/assets/imgs/detail-view.png)
